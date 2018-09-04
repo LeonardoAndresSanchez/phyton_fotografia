@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<div class="container-fluid">
+	<div class="jumbotron">
+	<h1 class="display-3 text-center">Camaras</h1>
+		<div class="row">
+			<div class="col">
+				<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+					<div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+				      	<div class="my-3 py-3">
+				          <h2 class="display-5">Canon</h2>
+				          <p class="lead">EOS-1D X Mark II</p>
+						</div>
+				        <div class="bg-light shadow mx-auto" style="width: 80%; height: 302px; border-radius: 21px 21px 21px 21px;">
+				        	<img class="img-fluid" alt="Responsive image" src="{% static 'imagenes/mark_II.png' %}" alt="">
+				        </div>
+					</div>		
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+					<div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+				      	<div class="my-3 py-3">
+				          <h2 class="display-5">Canon</h2>
+				          <p class="lead">EOS 6D Mark II</p>
+						</div>
+				        <div class="bg-light shadow mx-auto" style="width: 80%; height: 302px; border-radius: 21px 21px 21px 21px;">
+				        	<img class="img-fluid" alt="Responsive image" src="{% static 'imagenes/eos_marII.png' %}" alt="">
+				        </div>
+					</div>		
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+					<div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+				      	<div class="my-3 py-3">
+				          <h2 class="display-5">Nikon</h2>
+				          <p class="lead">D5.</p>
+						</div>
+				        <div class="bg-light shadow mx-auto" style="width: 90%; height: 302px; border-radius: 21px 21px 21px 21px;">
+				        	<img class="img-fluid" alt="Responsive image" src="{% static 'imagenes/cam_d5.png' %}" alt="">
+				        </div>
+					</div>		
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+					<div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+				      	<div class="my-3 py-3">
+				          <h2 class="display-5">Nikon</h2>
+				          <p class="lead">D500.</p>
+						</div>
+				        <div class="bg-light shadow mx-auto" style="width: 80%; height: 302px; border-radius: 21px 21px 21px 21px; ">
+				        	<img class="img-fluid" alt="Responsive image" src="{% static 'imagenes/cam_d500.png' %}" alt="">
+				        </div>
+					</div>		
+				</div>
+			</div>
+		</div>
+
+
+
+
+{% endblock %}

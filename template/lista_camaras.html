@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% block titulo%}
+	lista de Camaras
+{% endblock %}
+{% block %}
+	<h1>Lista de Camaras</h1>
+	{% for p in lista %}
+		<p>
+			camara: {{ p.camara }}
+			tipo: {{ p.tipo }}  
+			modelo: {{ p.modelo}}
+		</p>
+	{% endfor %}
+{% endblock %}

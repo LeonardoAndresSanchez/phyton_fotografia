@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+	<div class="container">
+	    <div class="jumbotron">
+		<h1 class="display-3">Contactanos</h1>
+	{%if  info_enviado%}
+		<h2>La informacion enviada es<h2>
+		{{email}}
+		{{tipoc}}
+		{{tipof}}
+		{{text}}
+	{%else%}
+		<form action="" method="POST">
+			{% csrf_token %}
+			{{ formulario.as_p }}
+			<input type="submit" value="enviar" class="btn btn-primary">
+		</form>
+		</div>
+            
+    </div>
+		
+	{% endif %}
+{% endblock %}

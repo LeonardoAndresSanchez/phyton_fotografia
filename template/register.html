@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block contenido  %}
+<main role="main">
+<div class="container">
+	<form action="" method="POST" enctype="multipart/form-data">
+		<div class = "form-group">
+			<h2>{{ msj }}</h2>
+			{% csrf_token %}
+			{{ form_1.as_p }}
+			{{ form_2.as_p }}
+			<input type="submit" value="Registrar" class="btn btn-primary">
+		</div>
+	</form>
+</div>
+	
+</main>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{%block agregar %}
+{% endblock %}
+{%block contenido%}
+	<form action="" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ formularioc.as_p }}
+		<input type="submit" name="Agregar Camara">
+	</form>
+{%endblock%}

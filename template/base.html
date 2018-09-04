@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+    {% load static %}
+<html >
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'imagenes/logo.png' %}">
+    <title>Photograph</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link href="{% static '/css/signin.css' %}" rel="stylesheet">
+    <link href="{% static '/css/carousel.css' %}" rel="stylesheet">
+    <link href= " {% static '/css/navbar-top.css' %}" rel="stylesheet">
+    <link href="{% static product.css %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    
+    {% block titulo %}        
+    {% endblock %} 
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#"> 
+            <img src="{% static 'imagenes/logo.png' %}" width="40" height="30" class="d-inline-block align-top" alt=""></a>
+        <a class="navbar-brand" href="/">Photo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        {% if request.user.is_authenticated  %}
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+           <a class="nav-link" href="/lista_fotografos">fotografos</a>
+        </li>
+        <li class="nav-item">
+           <a class="nav-link" href="/about/">Camaras</a>            
+        </li>
+        <li class="nav-item">
+           <a class="nav-link" href="/contacto/">Contacto</a>            
+        </li>
+        </ul>
+        <li class = "btn btn-dark">
+            <a class="btn btn-secondary active" href="{% url 'vista_perfil' %}">{{ request.user.username }}</a>
+            <img src="{{ perfil.foto.url }}" class="rounded-circle" width="40" height="30" alt="Foto Perfil">
+        </li>   
+          <li class = "btn btn-dark">
+              <a class="btn btn-secondary active" href="{% url 'vista_logout' %}">Logout</a>
+          </li>
+        {% else %}
+        <li class = "btn btn-dark">
+            <a class="btn btn-secondary active" href="{% url 'vista_registro' %}">Regitrarse</a>
+        </li>   
+          <li class = "btn btn-dark">
+              <a class="btn btn-secondary active" href="{% url 'vista_login' %}">Login</a>
+          </li>
+        {% endif %}
+        </div>
+      
+    </nav>
+
+      
+        
+    {% block contenido %}
+
+    {% endblock contenido %} 
+
+    <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="{%static 'js/popper.min.js' %}"></script>
+    <script src="{%static 'js/bootstrap.min.js'%}"></script>     
+</body>
+
+</html>

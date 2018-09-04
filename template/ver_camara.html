@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{%block ver%}
+	{{f.nombre}}
+{% endblock %}
+
+{% block contenido %}
+	<h1>Detalles</h1>
+	<p><b>nombre: </b>{{p.nombre}}</p>
+	<p><b>direccion:</b>{{p.direccion}}</p>
+	<p><b>telefono: </b>{{p.telefono}}</p>
+	<p><b>camara:</b>{{p.camara}}</p>
+	<p><b>tipof:</b>{{p.marca}}</p>
+	<a href="{% url 'vista_lista_fotografos' %}">Regresar a la lista</a>
+{% endblock %}
+

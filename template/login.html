@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}
+{% endblock %}
+
+{% block contenido %}}
+	<div class="text-center">
+		<h2> {{ msj }} </h2>
+		<form class="form-signin" method="POST">
+	      <img class="mb-4" src="{% static 'imagenes/logo.png' %}" alt="" width="82" height="72">
+	      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+			{% csrf_token %}
+			{{ formulariolg.as_p }}
+		    <div class="checkbox mb-3">
+		        <label>
+		          <input type="checkbox" value="remember-me"> Remember me
+		        </label>
+		    </div>
+			<!--<input type="submit" value="Login" class="btn btn-primary">-->	
+	      <button class="btn btn-primary" type="submit" value="Login">Sign in</button>
+		    <a href="/register/" class="btn btn-secundary" >registrarse</a>
+	      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+	    </form>		
+	</div>
+	
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% block contenido %}
+<div class="container-fluid">
+	<div class="jumbotron">
+		<h1>Lista Fotografos</h1>
+		<div class="row justify-content">
+			{% for p in lista %}
+			<div class="col-8">
+				<p>
+				Nombre: {{p.nombre}}
+				Direccion: {{p.direccion}}
+				Telefono: {{p.telefono}}
+				Camara: {{p.camara}}
+				Tipo fotografia: {{p.tipof}}
+				</p>
+			</div>
+			<div class="col-md-auto">
+				<a class="btn btn-primary btn-sm" href="/ver_fotografo/{{p.id}}" method ="GET">Ver</a>
+				<a class="btn btn-primary btn-sm" href="/editar_fotografo/{{p.id}}" method ="GET">Editar</a>
+				<a class="btn btn-secondary btn-sm" href="/eliminar_fotografo/{{p.id}}" method ="GET">Eliminar</a>  	
+			</div>
+			{% endfor %}
+		</div>				
+	</div>
+</div>
+{% endblock %}
+
+

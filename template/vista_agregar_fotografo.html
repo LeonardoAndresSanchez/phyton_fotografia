@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{%block agregar %}
+{% endblock %}
+{%block contenido%}
+<main role="main">
+<div class="container">
+	<form action="" method="POST" >
+		<div class = "form-group">			
+			{% csrf_token %}
+			{{ formulariof.as_p }}
+			<input type="submit" value="Agregar fotografo" class="btn btn-primary">
+		</div>
+	</form>
+</div>
+	
+{%endblock%}
